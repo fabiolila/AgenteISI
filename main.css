@@ -1,0 +1,82 @@
+body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #d946ef, #8b5cf6);
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+    }
+
+    .falling-icon {
+      position: fixed;
+      top: -50px;
+      font-size: 30px;
+      opacity: 0.8;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    .chatbot-bubble {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      max-width: 90%;
+      height: 500px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000;
+      animation: pop 0.5s ease;
+    }
+
+    .chatbot-header {
+      background: linear-gradient(90deg, #d946ef, #8b5cf6);
+      color: white;
+      padding: 15px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .chatbot-frame {
+      flex-grow: 1;
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .bot-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #d946ef, #8b5cf6);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+      z-index: 999;
+    }
+
+    .bot-icon img {
+      width: 40px;
+      height: 40px;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
